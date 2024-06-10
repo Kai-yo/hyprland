@@ -1,0 +1,283 @@
+* {
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: Material Design Icons, JetBrainsMono Nerd Font, Iosevka Nerd Font;
+  font-size: 18px; /*font size for popups*/
+}
+
+window#waybar {
+  background-color: rgba(26, 27, 38, 0.5);
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+}
+
+window#waybar.hidden {
+  opacity: 0.5;
+}
+
+#workspaces button {
+  color: #7a95c9;
+  font-size: 16px;
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
+  padding-left: 6px;
+  padding-right: 6px;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.2s cubic-bezier(0.55, -0.68, 0.48, 1.68);
+}
+
+#workspaces button.active {
+  color: #ecd3a0;
+  /*font-size: 16px;
+  padding-left: 6px;
+  padding-right: 6px;
+  transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.68);*/
+}
+
+#workspaces button.focused {
+  color: #bf616a;
+}
+
+#workspaces button.urgent {
+  background-color: #eb4d4b;
+}
+
+#window {
+  color: #64727d;
+}
+
+#clock,
+#cpu,
+#memory,
+#temperature,
+#network,
+#custom-media,
+#tray,
+#mode,
+#pulseaudio,
+#pulseaudio.muted,
+#custom-lock,
+#workspaces,
+#idle_inhibitor,
+#custom-power-menu,
+#custom-launcher,
+#custom-spotify,
+#custom-weather,
+#custom-weather.severe,
+#custom-weather.sunnyDay,
+#custom-weather.clearNight,
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight,
+#custom-weather.rainyDay,
+#custom-weather.rainyNight,
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight,
+#custom-weather.default {
+  color: #e5e5e5;
+  border-radius: 6px;
+  /*padding-top: 0px; padding adjusts the position of the boxes
+  padding-bottom: 0px;*/
+  background-color: #252733;
+  font-size: 16px;
+  margin-left: 3px; /*margins around boxes*/
+  margin-right: 3px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  /*font-family: Iosevka Nerd Font;*/
+}
+/*
+#cpu {
+  color: #fb958b;
+  font-size: 16px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+*/
+#memory {
+  color: #a1c999;
+  font-size: 16px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+#temperature {
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 16px;
+  color: #7a95c9;
+}
+
+#network {
+  color: #A1C999;
+  border-radius: 8px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 16px;
+  font-family: Material Design Icons;
+}
+
+#network.disconnected {
+  color: #fb958b;
+}
+
+#pulseaudio {
+  color: #81A1C1;
+  border-radius: 8px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 16px;
+}
+/*
+#pulseaudio button {
+  color: #7a95c9;
+  font-size: 16px;
+  box-shadow: inset 0 -3px transparent;
+  padding-left: 6px;
+  padding-right: 6px;
+  transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.68);
+}
+
+#pulseaudio button.active {
+  color: #ecd3a0;
+  font-size: 16px;
+  padding-left: 6px;
+  padding-right: 6px;
+  transition: all 0.5s cubic-bezier(0.55, -0.68, 0.48, 1.68);
+}
+*/
+#pulseaudio.muted {
+  color: #fb958b;
+  border-radius: 8px;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 16px;
+}
+
+@keyframes blink {
+  to {
+    background-color: rgba(30, 34, 42, 0.5);
+    color: #abb2bf;
+  }
+}
+
+#clock {
+  color: #8a909e;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-family: Iosevka Nerd Font;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+tooltip {
+  font-family: Iosevka Nerd Font;
+  border-radius: 8px;
+  padding: 2px;
+  background-color: #1f232b;
+}
+
+tooltip label {
+  font-family: Iosevka Nerd Font;
+  padding: 2px;
+}
+
+label:focus {
+  background-color: #1f232b;
+}
+
+#tray {
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 16px;
+}
+
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: #eb4d4b;
+}
+/*
+#idle_inhibitor {
+  background-color: #242933;
+}
+
+#idle_inhibitor.activated {
+  background-color: #ecf0f1;
+  color: #2d3436;
+}
+
+#custom-spotify {
+  color: #abb2bf;
+}
+*/
+#custom-weather {
+  /*font-family: Iosevka Nerd Font;*/
+  font-family: Material Design Icons, Iosevka Nerd Font;
+  font-size: 16px;
+  color: #8a909e;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-top: 4px;
+  padding-bottom: 1px;
+}
+
+#custom-weather.severe {
+  color: #eb937d;
+}
+
+#custom-weather.sunnyDay {
+  color: #c2ca76;
+}
+
+#custom-weather.clearNight {
+  color: #cad3f5;
+}
+
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight {
+  color: #c2ddda;
+}
+
+#custom-weather.rainyDay,
+#custom-weather.rainyNight {
+  color: #5aaca5;
+}
+
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight {
+  color: #d6e7e5;
+}
+
+#custom-weather.default {
+  color: #dbd9d8;
+}

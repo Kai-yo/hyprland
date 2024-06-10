@@ -1,0 +1,205 @@
+@import "mocha.css";
+
+/* Global */
+* {
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: Material Design Icons, NotoSans, JetBrainsMono Nerd Font, Iosevka Nerd Font;
+  font-size: 16px; /*font size for popups*/
+  border-radius: 0rem;
+}
+
+/* -- WHAT DOES THIS DO? -- */
+@keyframes blink {
+  to {
+    background-color: @red;
+    color: @base;
+  }
+}
+
+#workspaces, #mode, #tray, #memory, #temperature, 
+#network, #custom-media, #pulseaudio, #pulseaudio.muted, #clock, 
+#custom-weather, #custom-weather.severe, #custom-weather.sunnyDay,
+#custom-weather.clearNight, #custom-weather.cloudyFoggyDay, #custom-weather.cloudyFoggyNight,
+#custom-weather.rainyDay, #custom-weather.rainyNight, #custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight, #custom-weather.default {
+  font-size: 16px;
+  background-color: shade(@surface1, 1.0);
+  margin-top: .25rem;
+  margin-bottom: .25rem;
+}
+
+#mode, #tray, #memory, #temperature, 
+#network, #custom-media, #pulseaudio, #pulseaudio.muted {
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+}
+
+
+/* Bar */
+window#waybar {
+  /*border: 2px solid alpha(@crust, 0.3);*/
+  border: none;
+  border-radius: 0rem;
+  background-color: alpha(@base, 1);
+}
+window > box {
+  background-color: alpha(@base, 1);
+  border-radius: 0rem;
+  margin: .3rem;
+  margin-bottom: .3rem;
+}
+
+/*
+#window {
+  color: shade(@teal, 1.0);
+}
+#mode {
+  color: shade(@red, 1.0);
+}
+window#waybar.hidden {
+  opacity: 0.1;
+}
+*/
+
+
+/* Workspaces */
+#workspaces {
+  border-radius: 1rem;
+  margin: .1rem;
+  padding: .2rem;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+#workspaces button {
+  border-radius: 1rem;
+  color: shade(@subtext0, 1.0);
+  transition: all 0.2s cubic-bezier(0.55, -0.68, 0.48, 1.68);
+}
+
+#workspaces button.active {
+  color: shade(@teal, 0.9);
+}
+
+#workspaces button.urgent {
+  background-color: shade(@red, 1.0);
+}
+
+
+/* Tooltip */
+tooltip {
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: 1rem;
+  background-color: shade(@base, 1.0);
+}
+tooltip label {
+  color: @text;
+  padding: 0.2rem;
+}
+
+/*
+label:focus {
+  background-color: shade(@red, 1.0);
+}
+*/
+
+/* Everything else */
+#pulseaudio {
+  color: shade(@red, 1.0);
+  border-radius: 1rem 0rem 0rem 1rem;
+  padding-left: 1rem;
+}
+
+#pulseaudio.muted {
+  color: shade(@subtext1, 1.0);
+}
+
+#temperature {
+  color: shade(@yellow, 1.0);
+  border-radius: 0px 0px 0px 0px;
+}
+
+#memory {
+  color: shade(@mauve, 1.0);
+  border-radius: 0rem 1rem 1rem 0rem;
+  padding-right: 0.5rem;
+}
+
+/* Network and Tray */
+#network {
+  color: shade(@green, 1.0);
+  border-radius: 1rem 0rem 0rem 1rem;
+  margin-left: 0.5rem;
+  padding-left: 0.6rem;
+}
+
+#network.disconnected {
+  color: shade(@red, 1.0);
+}
+
+#tray {
+  border-radius: 0rem 1rem 1rem 0rem;
+  padding-left: 0.5rem;
+  padding-right: 1rem;
+  margin-right: 0.5rem;
+}
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: @red;
+}
+
+/* Clock and Weather */
+#clock {
+  color: shade(@text, 1.1);
+  margin-right: 0.5rem;
+  border-radius: 0rem 1rem 1rem 0rem;
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
+#custom-weather, #custom-weather.severe, #custom-weather.sunnyDay,
+#custom-weather.clearNight, #custom-weather.cloudyFoggyDay, #custom-weather.cloudyFoggyNight,
+#custom-weather.rainyDay, #custom-weather.rainyNight, #custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight, #custom-weather.default {
+  color: shade(@text, 1.1);
+  font-family: Material Design Icons, NotoSans;
+  padding-left: 1rem;
+  padding-top: 0.2rem;
+  border-radius: 1rem 0rem 0rem 1rem;
+}
+
+#custom-weather.severe {
+  color: #eb937d;
+}
+#custom-weather.sunnyDay {
+  color: #c2ca76;
+}
+#custom-weather.clearNight {
+  color: #cad3f5;
+}
+#custom-weather.cloudyFoggyDay,
+#custom-weather.cloudyFoggyNight {
+  color: #c2ddda;
+}
+#custom-weather.rainyDay,
+#custom-weather.rainyNight {
+  color: #5aaca5;
+}
+#custom-weather.showyIcyDay,
+#custom-weather.snowyIcyNight {
+  color: #d6e7e5;
+}
+#custom-weather.default {
+  color: #dbd9d8;
+}
