@@ -111,7 +111,7 @@
 
     "custom/weather": {
       "exec": "python3 ~/.config/waybar/scripts/weather.py",
-      "restart-interval": 3600,
+      "restart-interval": 600,
       "return-type": "json",
       /*"on-click": "xdg-open https://weather.com/en-IN/weather/today/l/1ce4a682e017124d52973ba1ffa82e6b96566374cf779555b22262d7d2f917dd"*/
     },   
