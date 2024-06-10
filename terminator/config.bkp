@@ -1,0 +1,32 @@
+[global_config]
+  extra_styling = False
+  putty_paste_style_source_clipboard = True
+[keybindings]
+[profiles]
+  [[default]]
+    icon_bell = False
+    background_darkness = 0.85
+    background_type = transparent
+    cursor_shape = underline
+    cursor_fg_color = "#e01b24"
+    cursor_bg_color = "#33d17a"
+    cursor_color_default = False
+    font = Monospace 16
+    foreground_color = "#c0bfbc"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
+    use_system_font = False
+    bold_is_bright = True
+    copy_on_selection = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+[plugins]

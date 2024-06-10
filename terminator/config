@@ -1,0 +1,30 @@
+[global_config]
+  inactive_color_offset = 0.61
+  suppress_multiple_term_dialog = True
+[keybindings]
+[profiles]
+  [[default]]
+    background_darkness = 0.85
+    background_type = transparent
+    background_image = None
+    cursor_shape = ibeam
+    cursor_fg_color = "#282a36"
+    cursor_bg_color = "#f66151"
+    cursor_color_default = False
+    font = Noto Sans Mono 16
+    foreground_color = "#f8f8f2"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_lines = 20000
+    palette = "#262626:#e356a7:#42e66c:#e4f34a:#9b6bdf:#e64747:#75d7ec:#efa554:#7a7a7a:#ff79c6:#50fa7b:#f1fa8c:#bd93f9:#ff5555:#8be9fd:#ffb86c"
+    use_system_font = False
+    copy_on_selection = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
